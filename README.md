@@ -95,8 +95,8 @@ Por último, alguns requisitos são dependentes uns dos outros, então recomenda
 
 ### Data de Entrega
 
-  - Serão `2` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `01/07/2021 - 14:00h`.
+  - Serão `1` dias de projeto.
+  - Data de entrega para avaliação final do projeto: `30/07/2021 - 14:00h`.
 
 ---
 
