@@ -11,23 +11,21 @@ const options = {
 const getLocationInfos = (clientIP, cb) => {
   const req = https.request(options, (res) => {
     res.on('data', (locationDataRaw) => {
+      console.log('--->', locationDataRaw.toString());
       const locationData = JSON.parse(locationDataRaw.toString());
+
       console.log('Location data:');
       console.log(locationData);
-
       cb(locationData);
     });
   });
-
-  req.on('error', (e) => {
-    console.error(e);
-  });
+  req.on('error', (e) => { console.error(e) });
 
   // TO DO: Enviar mensagem (IP) ao server
   req.write(`ip=${clientIP}`);
+
   req.end();
 };
-
 module.exports = {
   getLocationInfos,
 };

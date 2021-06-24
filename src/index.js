@@ -1,12 +1,9 @@
 const net = require('net');
-
 const { getLocationInfos } = require('./location');
-
 const getHeaderValue = (data, header) => {
   const headerData = data
     .split('\r\n')
     .find((chunk) => chunk.startsWith(header));
-
   return headerData.split(': ').pop();
 };
 
@@ -16,7 +13,8 @@ const endOfResponse = '\r\n\r\n';
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
-    const clientIP = getHeaderValue(data.toString(), 'X - Forwarded - For');
+    console.log('data:', data.toString());
+    const clientIP = getHeaderValue(data.toString(), 'X-Forwarded-For');
 
     getLocationInfos(clientIP, (locationData) => {
       socket.write(startOfResponse);
@@ -26,10 +24,8 @@ const server = net.createServer((socket) => {
       socket.write('<iframe src="https://giphy.com/embed/l3q2zVr6cu95nF6O4" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
       socket.write(`<h2 data-testid="ip">${clientIP}</h2>`);
       socket.write('</body></html>');
-      console.log(locationData);
       socket.write(endOfResponse);
+      console.log(locationData);
     });
   });
 });
-
-server.listen(8080);
