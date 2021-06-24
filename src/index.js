@@ -26,7 +26,11 @@ const server = net.createServer((socket) => {
       socket.write(`<h2 data-testid="ip">${clientIP}</h2>`);
       socket.write('</body></html>');
       socket.write(endOfResponse);
-      console.log(locationData);
+      socket.write(`<h3 data-testid="city">${locationData.city}</h3>`);
+      socket.write(`<h3 data-testid="postal_code">${locationData.postal_code}</h3>`);
+      socket.write(`<h3 data-testid="region">${locationData.region}</h3>`);
+      socket.write(`<h3 data-testid="country">${locationData.country}</h3>`);
+      socket.write(`<h3 data-testid="company">${locationData.company}</h3>`);
     });
   });
 });
