@@ -32,7 +32,7 @@ describe('4 - Criar um túnel através do Ngrok', () => {
   });
 });
 
-describe.skip('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
+describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   it('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
@@ -44,7 +44,7 @@ describe.skip('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   });
 });
 
-describe.skip('6 - Adicionar a estrutura de início de requisição HTTP', () => {
+describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no startOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
@@ -52,7 +52,7 @@ describe.skip('6 - Adicionar a estrutura de início de requisição HTTP', () =>
   });
 });
 
-describe.skip('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
+describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no endOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
@@ -60,7 +60,7 @@ describe.skip('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
   });
 });
 
-describe.skip('8 - Identificar o endereço de IP do client', () => {
+describe('8 - Identificar o endereço de IP do client', () => {
   it('Será validado que foi adicionado o código para pegar endereço de IP', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
@@ -68,7 +68,7 @@ describe.skip('8 - Identificar o endereço de IP do client', () => {
   });
 });
 
-describe.skip('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
+describe('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
   it('Será validado que foi adicionado a request no arquivo location', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
