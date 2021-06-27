@@ -18,7 +18,7 @@ function wait(time) {
     }
   }
 
-describe.skip('4 - Criar um túnel através do Ngrok', () => {
+describe('4 - Criar um túnel através do Ngrok', () => {
   it('Será validado se os comandos estão dentro do arquivo instruction.json', async () => {
     const instruction = fs.readFileSync('./instruction.json', 'utf8');
     const instructionJson = JSON.parse(instruction.toString());
