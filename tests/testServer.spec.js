@@ -18,7 +18,7 @@ function wait(time) {
     }
   }
 
-describe('4 - Criar um túnel através do Ngrok', () => {
+describe.skip('4 - Criar um túnel através do Ngrok', () => {
   it('Será validado se os comandos estão dentro do arquivo instruction.json', async () => {
     const instruction = fs.readFileSync('./instruction.json', 'utf8');
     const instructionJson = JSON.parse(instruction.toString());
@@ -152,7 +152,7 @@ describe.skip('11 - Responder informações extraídas através do IP do client'
   });
 });
 
-describe.skip('12 - Responder dados do dispositivo (client)', () => {
+describe('12 - Responder dados do dispositivo (client)', () => {
   it('Será validado se que ao acessar a tela listou os dados do dispositivo', async () => {
     const instructions = fs.readFileSync('./instruction.json', 'utf8');
     const instructionsString = JSON.parse(instructions.toString());
@@ -184,7 +184,7 @@ describe.skip('12 - Responder dados do dispositivo (client)', () => {
   });
 });
 
-describe.skip('13 - Responder a request com os resources do Server', () => {
+describe('13 - Responder a request com os resources do Server', () => {
   it('Validar se acessar o site vai listar as informações do sistema', async () => {
     const instructions = fs.readFileSync('./instruction.json', 'utf8');
     const instructionsString = JSON.parse(instructions.toString());
